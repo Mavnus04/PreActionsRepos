@@ -1,4 +1,4 @@
-name:  dependent jobs
+name:  dependent jobs 2
 on:  [push]
 jobs:
   fake_build:
@@ -19,4 +19,11 @@ jobs:
           sleep 10
         name:  Fake test
 
-  
+  report_on_failure:
+    runs-on: ubuntu-latest
+    needs:  [fake_build]
+    steps:
+      - run:  |
+          echo "Report on failure"
+          sleep 10
+        name:  Report on failure
