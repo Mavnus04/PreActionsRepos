@@ -1,7 +1,7 @@
 name:  using vars
 on:  [push]
 jobs:
-  show vars:
+  show_vars:
     runs-on: ubuntu-latest
     steps:
       - name:  show vars
