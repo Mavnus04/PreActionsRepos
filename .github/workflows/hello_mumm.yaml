@@ -12,3 +12,9 @@ jobs:
     steps:
       - run:  curl -s https://www.google.com
         name:  curl google
+
+  third_hello_test:
+    runs-on: ubuntu-latest
+    steps:
+      - run:  exit 1
+        name:  exit fail
