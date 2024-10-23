@@ -1,5 +1,5 @@
 name:  dependent jobs 2
-on:  [push]
+on:  [workflow_dispatch]
 jobs:
   fake_build:
     runs-on: ubuntu-latest
