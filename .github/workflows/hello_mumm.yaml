@@ -6,3 +6,9 @@ jobs:
     steps:
       - run:  echo "Hello Mumm"
         name:  Hello Mumm
+  
+  second_hello_test:
+    runs-on: ubuntu-latest
+    steps:
+      - run:  curl -s https://www.google.com
+        name:  curl google
