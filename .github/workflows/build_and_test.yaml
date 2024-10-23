@@ -11,5 +11,12 @@ jobs:
       - name:  show folder content
         run:  ls -l
 
-  #build:
+  build:
+    runs-on: ubuntu-latest
+    needs:  [git_code]
+    steps:
+      - name:  build
+        run:  |
+          dotnet build
+          
     
