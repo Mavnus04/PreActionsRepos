@@ -4,7 +4,9 @@ jobs:
   first_hello_mumm:
     runs-on: ubuntu-latest
     steps:
-      - run:  echo "Hello Mumm"
+      - run:  |
+          echo "Hello Mumm"
+          sleep 10
         name:  Hello Mumm
   
   second_hello_test:
@@ -18,3 +20,11 @@ jobs:
     steps:
       - run:  exit 1
         name:  exit fail
+
+  fourth_hello_test:
+    runs-on: ubuntu-latest
+    steps:
+      - run:  |
+          echo "4th run"
+          sleep 13
+        name:  fourth run
