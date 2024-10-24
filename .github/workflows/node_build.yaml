@@ -1,0 +1,17 @@
+name:  node build
+on:  [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  show folder content
+        run:  ls -l
+      - uses: actions/checkout@v4
+        name:  Git checkout
+      - name:  show folder content
+        run:  ls -l
+      - name:  pull modules
+        run:  |
+            cd nodejs
+            npm install
+            

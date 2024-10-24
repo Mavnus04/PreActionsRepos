@@ -1,5 +1,5 @@
 name:  using vars 2
-on:  [push]
+on:  [workflow_dispatch]
 jobs:
   show_vars_prod:
     runs-on: ubuntu-latest
