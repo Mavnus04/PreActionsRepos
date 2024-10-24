@@ -30,3 +30,13 @@ jobs:
         run:  |
             dotnet build
     if:  ${{github.event_name == 'push'}}
+
+  conditional_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name:  Git checkout
+      - name:  conditional test
+        run:  |
+            dotnet test
+    if:  ${{github.event_name == 'issues'}}
