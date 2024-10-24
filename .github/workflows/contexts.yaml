@@ -9,7 +9,7 @@ jobs:
     steps:
       - name:  show contexts
         run:  |
-            echo "github: ${{github}}"
-            echo "secrets: ${{secrets}}"
-            echo "job: ${{job}}"
-            echo "runner: ${{runner}}"
+            echo "github: ${{toJson(github)}}}"
+            echo "secrets: ${{toJson(secrets)}}"
+            echo "job: ${{toJson(job)}}"
+            echo "runner: ${{toJson(runner)}}"
