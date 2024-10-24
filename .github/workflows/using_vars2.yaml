@@ -1,18 +1,19 @@
 name:  using vars 2
 on:  [push]
 jobs:
-  show_vars:
+  show_vars_prod:
     runs-on: ubuntu-latest
     environment:  production
     steps:
-      - name:  show vars
+      - name:  run production
         run:  |
             echo "vars: ${{vars.MY_ENVIRONMENT_VARIABLE_1}}"
 
   show_vars_dev:
     runs-on: ubuntu-latest
     environment:  development
+    needs:  [show_vars_prod]
     steps:
-      - name:  show vars
+      - name:  run development
         run:  |
             echo "vars: ${{vars.MY_ENVIRONMENT_VARIABLE_1}}"
