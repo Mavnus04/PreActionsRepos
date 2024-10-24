@@ -1,0 +1,15 @@
+name:  contexts
+on:
+  push:
+    paths:
+      - "**contexts.yaml"
+jobs:
+  show_contexts:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  show contexts
+        run:  |
+            echo "github: ${{github}}"
+            echo "secrets: ${{secrets}}"
+            echo "job: ${{job}}"
+            echo "runner: ${{runner}}"
