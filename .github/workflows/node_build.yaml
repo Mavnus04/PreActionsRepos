@@ -8,10 +8,14 @@ jobs:
         run:  ls -l
       - uses: actions/checkout@v4
         name:  Git checkout
+      - name:  use cache for node packages
+        uses: actions/cache@v4
+        with: 
+          path:  nodejs/node_modules
+          key:  our_modules
       - name:  show folder content
         run:  ls -l
       - name:  pull modules
         run:  |
             cd nodejs
             npm install
-            
