@@ -8,3 +8,15 @@ jobs:
           echo "Hello World"
           sleep 10
         name:  Hello World
+
+  show_logic_output:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  show logic output
+        run:  |
+            echo ${{1}}
+            echo ${{null}}
+            echo "4=3 ${{4==3}}"
+            echo "4!=3 ${{4!=3}}"
+            echo "4>3 ${{4>3}}"
+            echo "4<3 ${{4<3}}"
