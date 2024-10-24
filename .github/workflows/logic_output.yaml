@@ -1,5 +1,5 @@
 name:  logic output
-on:  [push]
+on:  [push, workflow_dispatch]
 jobs:
   hello_world:
     runs-on: ubuntu-latest
@@ -20,3 +20,11 @@ jobs:
             echo "4!=3 ${{4!=3}}"
             echo "4>3 ${{4>3}}"
             echo "4<3 ${{4<3}}"
+
+  conditional_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  conditional build
+        run:  |
+            dotnet build
+        if:  ${{github.event_name == 'push'}}
