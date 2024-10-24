@@ -8,3 +8,11 @@ jobs:
       - name:  show vars
         run:  |
             echo "vars: ${{vars.MY_ENVIRONMENT_VARIABLE_1}}"
+
+  show_vars_dev:
+    runs-on: ubuntu-latest
+    environment:  development
+    steps:
+      - name:  show vars
+        run:  |
+            echo "vars: ${{vars.MY_ENVIRONMENT_VARIABLE_1}}"
