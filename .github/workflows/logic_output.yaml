@@ -29,4 +29,4 @@ jobs:
       - name:  conditional build
         run:  |
             dotnet build
-        if:  ${{github.event_name == 'push'}}
+    if:  ${{github.event_name == 'push'}}
