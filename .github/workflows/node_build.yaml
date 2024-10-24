@@ -22,3 +22,4 @@ jobs:
             npm install
       - name:  check_cache
         run:  echo "Cache hit ${{toJson(steps.cache_modules.outputs)}}"
+        # contains(steps.cache_modules.outputs.cache-hit, 'true')
