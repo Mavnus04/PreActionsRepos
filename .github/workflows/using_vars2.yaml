@@ -3,6 +3,7 @@ on:  [push]
 jobs:
   show_vars:
     runs-on: ubuntu-latest
+    environment:  production
     steps:
       - name:  show vars
         run:  |
